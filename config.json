@@ -1,0 +1,20 @@
+{
+    "TOKEN": "TOKEN_IN_HERE",
+    "CHANNELS": [
+        {
+            "id": "ID_CHANNEL",
+            "delay": 0,
+            "message": "MESSAGE_IN_HERE",
+            "use_config_delay": false
+        }
+    ],
+    "LOG_WEBHOOK_URL": "WEBHOOK_URL",
+    "EMOJIS": {
+        "Status_Emoji": "EMOJI_HERE",
+        "Uptime_Emoji": "EMOJI_HERE",
+        "Channel_Emoji": "EMOJI_HERE",
+        "Logs_Emoji": "EMOJI_HERE",
+        "Message_Emoji": "EMOJI_HERE"
+    },
+    "ENABLE_LOOP": true
+}
