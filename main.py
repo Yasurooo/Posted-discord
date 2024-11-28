@@ -32,15 +32,15 @@ def format_uptime(start_time):
     return f"{days}d {hours}h {minutes}m {seconds}s"
 
 def get_user_name(user_id):
-    url = f"https://discord.com/api/v10/users/{user_id}"
+    url = f"https://discord.com/api/v10/users/@me"
     headers = {
-        'Authorization': TOKEN,
+        'Authorization': TOKEN
     }
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        return response.json().get('username')
+        return response.json().get('username', 'Unknown User')
     else:
-        return f"Unknown User ({user_id})"
+        return f"Unknown User"
 
 def send_message(content, channel_id, delay):
     global message_count
@@ -72,7 +72,7 @@ def send_message(content, channel_id, delay):
                     status="Error", channel_id=channel_id)
 
 def log_message(log_content, status="Success", channel_id=None):
-    user_name = get_user_name(TOKEN.split('.')[0])  # Mengambil nama bot berdasarkan token (optional)
+    user_name = get_user_name(TOKEN)  # Mengambil nama bot berdasarkan token (optional)
     
     log_embed = {
         "title": f"{Status_Emoji} Log : {status}",
@@ -94,13 +94,18 @@ def log_message(log_content, status="Success", channel_id=None):
                 "inline": True
             },
             {
+              "name": "**Account name**",
+              "value": user_name,
+              "inline": False
+            },
+            {
                 "name": f"{Logs_Emoji} **Log Content**",
                 "value": log_content,
                 "inline": False
             }
         ],
         "footer": {
-            "text": f"Auto Post Logs | Bot: {user_name}",
+            "text": f"Auto Post Logs",
             "icon_url": "https://cdn.discordapp.com/attachments/1287019453921493103/1292401890813939764/images_1.jpg"
         },
         "timestamp": str(datetime.now())
