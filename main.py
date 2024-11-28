@@ -46,7 +46,7 @@ def send_message(content, channel_id, delay):
     global message_count
     url = f'https://discord.com/api/v10/channels/{channel_id}/messages'
     headers = {
-        'Authorization': f'Bot {TOKEN}',
+        'Authorization': TOKEN,
         'Content-Type': 'application/json',
     }
 
