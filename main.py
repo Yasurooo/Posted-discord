@@ -34,7 +34,7 @@ def format_uptime(start_time):
 def get_user_name(user_id):
     url = f"https://discord.com/api/v10/users/{user_id}"
     headers = {
-        'Authorization': f'Bot {TOKEN}'
+        'Authorization': TOKEN,
     }
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
