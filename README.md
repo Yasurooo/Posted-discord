@@ -1,4 +1,4 @@
-# Auto poster for discord.
+# Auto poster for discord
 
 ## Description
 > - ini sebenarnya adalah program yang non legal jadi segala masalah yang terjadi pada akun anda bukan tanggung jawabku
